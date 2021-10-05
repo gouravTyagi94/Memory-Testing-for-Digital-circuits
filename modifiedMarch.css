@@ -1,0 +1,41 @@
+body{
+background-color: #a6f0c6;
+
+/* background-image: url("Electricity_Circuits_BLOG.png"); */
+}
+#heading{
+  background-color: #7eca9c;
+}
+.memory-size{
+  width: 135px;
+  display: inline-block;
+}
+.memory-col{
+  padding: 0;
+}
+.fault-location{
+  justify-content: center;
+  text-align: center;
+}
+
+.label-text{
+  text-align: center;
+}
+.title-text{
+text-align: center;
+padding: 30px 0 30px;
+}
+.label-margin{
+margin-bottom: 5px;
+}
+.submit{
+margin-top: 10px;
+}
+.memory-map{
+padding: 20px;
+text-align: center;
+visibility:hidden;
+}
+.data-table{
+margin-top: 20px;
+}

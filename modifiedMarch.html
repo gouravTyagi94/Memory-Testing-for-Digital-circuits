@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <link rel="stylesheet" href="modifiedMarch.css">
+  <link rel="icon" href="march.ico">
+  <title>March-C Test</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;900&family=Ubuntu:wght@300&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <section id="heading">
+  <h1 class="title-text">Modified March-C Test</h1>
+  </section>
+
+
+  <div class="container col-md-6">
+
+    <div class="row py-3 label-text fault-location">
+
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="label-margin"><strong>Enter Memory Size </strong></label>
+          <!-- <div class="row"> -->
+            <div class="col memory-col">
+              <input type="text" class="form-control memory-size memory-size-row" value=""
+              placeholder="No. of Rows">
+              <label class="label-margin"><strong>X</strong></label>
+              <input type="text" class="form-control memory-size memory-size-col" value=""
+              placeholder="No. of Columns">
+            <!-- </div> -->
+
+              <!-- <div class="col memory-col">
+              </div> -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="row py-3 label-text">
+
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="label-margin"><strong>Select Type of Fault </strong></label>
+          <div class="dropdown">
+            <button class="btn btn-secondary btn-md dropdown-toggle" type="button" id="dropdownMenuButton1"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Choose Fault
+            </button>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item sa0" href="#">Stuck at 0 fault</a></li>
+              <li><a class="dropdown-item sa1" href="#">Stuck at 1 fault</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item noFault" href="#">No fault</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-6">
+        <label class="label-margin"><strong>Specify Fault location </strong></label>
+        <div class="dropdown">
+          <button class="btn btn-secondary btn-md dropdown-toggle" type="button" id="dropdownMenuButton2"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Choose Fault
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+            <li><a class="dropdown-item manual" href="#">Manually Input the location</a></li>
+            <li><a class="dropdown-item random" href="#">Randomly generate location</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+  <div class="row py-3 fault-location">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label class="label-margin"><strong>Enter the Coordinates of Fault </strong></label>
+        <!-- <div class="row"> -->
+          <div class="col memory-col">
+            <input type="text" class="form-control memory-size manual-fr" value=""
+            placeholder="x-coordinate">
+            <label class="label-margin"><strong>X</strong></label>
+            <input type="text" class="form-control memory-size manual-fc" value=""
+            placeholder="y-coordinate">
+          <!-- </div> -->
+
+            <!-- <div class="col memory-col">
+            </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center">
+    <button type="submit" value="" class="btn btn-primary btn-lg submit">Generate Memory Map</button>
+  </div>
+
+  <div class="container">
+    <table class="table table-dark table-hover data-table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Color</th>
+          <th scope="col">Fault Detected</th>
+          <th scope="col">Fault Representation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Green</td>
+          <td>No Fault Detected</td>
+          <td>
+            <!-- <button type="button" class="btn btn-danger btn-sm px-3">
+         <i class="fas fa-times"></i>
+       </button> -->
+            <div style='background-color:green; display: inline-block; width: 12px;height: 12px; margin:3px'></div>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>LightCoral</td>
+          <td>Stuck At 0/ &uarr; Transition Fault</td>
+          <td>
+            <!-- <button type="button" class="btn btn-danger btn-sm px-3">
+         <i class="fas fa-times"></i>
+       </button> -->
+            <div style='background-color:LightCoral; display: inline-block; width: 12px;height: 12px; margin:3px'></div>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Red</td>
+          <td>Stuck At 1/ &darr; Transition Fault</td>
+          <td>
+            <!-- <button type="button" class="btn btn-danger btn-sm px-3">
+         <i class="fas fa-times"></i>
+       </button> -->
+            <div style='background-color:red; display: inline-block; width: 12px;height: 12px; margin:3px'></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="memory-map container">
+    <h1 id="memory-map-heading">Memory Map</h1>
+  </div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+    crossorigin="anonymous"></script>
+  <script src="modifiedMarch.js"></script>
+</body>
+
+</html>
